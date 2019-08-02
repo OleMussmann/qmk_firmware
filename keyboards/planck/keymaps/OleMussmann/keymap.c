@@ -29,11 +29,11 @@ enum planck_layers {
   _DE,
   _US,
   _LOWER,
-  _NEO_NEO_RAISE,
+  _NEO_RAISE,
 //  _NEO_NEO_ADJUST,
-  _NEO_DE_RAISE,
+//  _NEO_DE_RAISE,
 //  _NEO_DE_ADJUST,
-  _NEO_US_RAISE,
+//  _NEO_US_RAISE,
 //  _NEO_US_ADJUST,
   _DE_RAISE,
 //  _DE_ADJUST,
@@ -51,17 +51,47 @@ enum planck_keycodes {
   US_GAME,
   DE,
   US,
-  BACKTICK
+  N_GRAV,
+  N_UNDS,
+  N_LBRC,
+  N_RBRC,
+  N_CIRC,
+  N_EXLM,
+  N_LT,
+  N_GT,
+  N_EQL,
+  N_AMP,
+  N_BSLS,
+  N_SLSH,
+  N_LCBR,
+  N_RCBR,
+  N_ASTR,
+  N_QUES,
+  N_LPRN,
+  N_RPRN,
+  N_MINS,
+  N_COLN,
+  N_AT,
+  N_HASH,
+  N_DLR,
+  N_PIPE,
+  N_TILD,
+  N_GRV,
+  N_PLUS,
+  N_PERC,
+  N_DQT,
+  N_QUOT,
+  N_SCLN
 };
 
 #define NNL MO(_LOWER)
-#define NNR MO(_NEO_NEO_RAISE)
+#define NNR MO(_NEO_RAISE)
 
 #define NDL MO(_LOWER)
-#define NDR MO(_NEO_DE_RAISE)
+#define NDR MO(_DE_RAISE)
 
 #define NUL MO(_LOWER)
-#define NUR MO(_NEO_US_RAISE)
+#define NUR MO(_US_RAISE)
 
 #define DL MO(_LOWER)
 #define DR MO(_DE_RAISE)
@@ -75,32 +105,31 @@ enum planck_keycodes {
 // Double defined keys
 #define KC_CTLESC CTL_T(KC_ESC)
 
-#define KC_TBUPNN LT(_NEO_NEO_RAISE, KC_TAB)
-#define KC_TBUPND LT(_NEO_DE_RAISE, KC_TAB)
-#define KC_TBUPNU LT(_NEO_US_RAISE, KC_TAB)
+#define KC_TBUPNN LT(_NEO_RAISE, KC_TAB)
+#define KC_TBUPND LT(_DE_RAISE, KC_TAB)
+#define KC_TBUPNU LT(_US_RAISE, KC_TAB)
 //#define KC_TBUPD MO(_DE_RAISE)
 #define KC_TBUPD LT(_DE_RAISE, KC_TAB)
 #define KC_TBUPU LT(_US_RAISE, KC_TAB)
 
 #define KC_ZDNNN LT(_LOWER, KC_Z)
-#define KC_ZUPND LT(_NEO_DE_RAISE, KC_Z)
+#define KC_ZUPND LT(_DE_RAISE, KC_Z)
 
-#define KC_YUPNU LT(_NEO_US_RAISE, KC_Y)
+#define KC_YUPNU LT(_US_RAISE, KC_Y)
 
-#define KC_QUUPN LT(_NEO_NEO_RAISE, KC_QUOT)
+#define KC_QUUPN LT(_NEO_RAISE, KC_QUOT)
 #define KC_BSUPD LT(_DE_RAISE, KC_BSLS)
 #define KC_QUUPU LT(_US_RAISE, KC_QUOT)
 
 #define KC_SPDNN LT(_LOWER, KC_SPC)
 #define KC_SPDND LT(_LOWER, KC_SPC)
 #define KC_SPDNU LT(_LOWER, KC_SPC)
-//#define KC_SPDD LT(_LOWER, KC_SPC)
-#define KC_SPDD MO(_LOWER)
+#define KC_SPDD LT(_LOWER, KC_SPC)
+//#define KC_SPDD MO(_LOWER)
 #define KC_SPDU LT(_LOWER, KC_SPC)
 
 #define KC_LBDND LT(_LOWER, KC_LBRC)
 #define KC_LBDNU LT(_LOWER, KC_LBRC)
-#define KC_YDWNU LT(_LOWER, KC_Y)
 
 #define KC_ZDWNU LT(_LOWER, KC_Z)
 #define KC_ZDWND LT(_LOWER, KC_Z)
@@ -125,8 +154,11 @@ enum planck_keycodes {
 
 // Macros
 #define KC_COPY LCTL(KC_C)
+#define KC_NCOPY LCTL(KC_R)
 #define KC_CPUSR LCTL(KC_B)
+#define KC_NCPUS LCTL(KC_N)
 #define KC_PASTE LCTL(KC_V)
+#define KC_NPSTE LCTL(KC_W)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -157,10 +189,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_NEO_NEO] = LAYOUT_planck_grid(
-    KC_GRV,     KC_Q,     KC_W,    KC_E,    KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_LBRC,
-    KC_TBUPNN,  KC_A,     KC_S,    KC_D,    KC_F,     KC_G,     KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPN,
-    KC_LSFT,    KC_ZDNNN, KC_X,    KC_C,    KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-    KC_CTLESC,  KC_LGUI,  KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SPDNN, KC_SPDNN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_GRV,     KC_Q,     KC_W,    KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_LBRC,
+    KC_TBUPNN,  KC_A,     KC_S,    KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPN,
+    KC_LSFT,    KC_ZDNNN, KC_X,    KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+    KC_CTLESC,  KC_LGUI,  KC_LALT, KC_NCOPY, KC_NCPUS, KC_NPSTE, KC_SPDNN, KC_SPDNN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* NEO keyboard on system NEO layout - GAME mode
@@ -234,11 +266,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * what the system sees
  *
  * ,-----------------------------------------------------------------------------------.
- * | Grv  |  X   |  V   |  L   |  C   |  W   |  K   |  H   |  G   |  F   |  Q   | MINS |
+ * | Grv  |  X   |  V   |  L   |  C   |  W   |  K   |  H   |  G   |  F   |  Q   | SS   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | TabUp|  U   |  I   |  A   |  E   |  O   |  S   |  N   |  R   |  T   |  D   | YUp  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | LShft| YDwn | Scln | Quot |  P   |  Y   |  B   |  M   | Comm | Dot  |  J   | RShft|
+ * | LShft| Raise|      |      |  P   |  Y   |  B   |  M   | Comm | Dot  |  J   | RShft|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   | Left | Down |  Up  | Right|
  * `-----------------------------------------------------------------------------------'
@@ -250,16 +282,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | TabUp|  U   |  I   |  A   |  E   |  O   |  S   |  N   |  R   |  T   |  D   | ZUp  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | LShft| ZDwn | Scln | Quot |  P   |  Y   |  B   |  M   | Comm | Dot  |  J   | RShft|
+ * | LShft| Raise|      |      |  P   |  Y   |  B   |  M   | Comm | Dot  |  J   | RShft|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   | Left | Down |  Up  | Right|
  * `-----------------------------------------------------------------------------------'
  */
 [_NEO_US] = LAYOUT_planck_grid(
-    KC_GRV,     KC_X,     KC_V,    KC_L,    KC_C,     KC_W,     KC_K,     KC_H,     KC_G,    KC_F,    KC_Q,   KC_MINS,
-    KC_TBUPNU,  KC_U,     KC_I,    KC_A,    KC_E,     KC_O,     KC_S,     KC_N,     KC_R,    KC_T,    KC_D,   KC_YUPNU,
-    KC_LSFT,    KC_YDWNU, KC_SCLN, KC_QUOT, KC_P,     KC_Z,     KC_B,     KC_M,     KC_COMM, KC_DOT,  KC_J,   KC_RSFT,
-    KC_CTLESC,  KC_LGUI,  KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SPDNU, KC_SPDNU, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT
+    KC_GRV,     KC_X,    KC_V,    KC_L,    KC_C,     KC_W,     KC_K,     KC_H,     KC_G,    KC_F,    KC_Q,   KC_NO,
+    KC_TBUPNU,  KC_U,    KC_I,    KC_A,    KC_E,     KC_O,     KC_S,     KC_N,     KC_R,    KC_T,    KC_D,   KC_YUPNU,
+    KC_LSFT,    UL,      KC_NO,   KC_NO,   KC_P,     KC_Z,     KC_B,     KC_M,     KC_COMM, KC_DOT,  KC_J,   KC_RSFT,
+    KC_CTLESC,  KC_LGUI, KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SPDNU, KC_SPDNU, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT
 ),
 
 /* DE keyboard on system DE layout
@@ -434,7 +466,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |      |   `  |   _  |   [  |   ]  |   ^  |   !  |   <  |   >  |   =  |   &  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | TabUp|   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
+ * |      |   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |   #  |   $  |   |  |   ~  |   `  |   +  |   %  |   "  |   '  |   ;  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -446,61 +478,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |      |   `  |   _  |   [  |   ]  |   ^  |   !  |   <  |   >  |   =  |   &  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | TabUp|   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
+ * |      |   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |   #  |   $  |   |  |   ~  |   `  |   +  |   %  |   "  |   '  |   ;  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |             |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-[_NEO_NEO_RAISE] = LAYOUT_planck_grid(
-    KC_TRNS, BACKTICK,  KC_QUES, KC_G_LBRC, KC_G_RBRC, KC_GRV,   KC_EXLM,  KC_G_LT, KC_G_GT, KC_RPRN, KC_CIRC, KC_TRNS,
-    _______, KC_G_BSLS, KC_AMPR, KC_G_LCBR, KC_G_RCBR, KC_RCBR,  KC_UNDS,  KC_ASTR, KC_LPRN, KC_SLSH, KC_GT,   KC_G_AT,
-    _______, KC_BSLS,   KC_DLR,  KC_G_PIPE, KC_G_TILD, KC_G_BTK, KC_RBRC,  KC_PERC, KC_AT,   KC_PIPE, KC_LT,   _______,
-    _______, _______,   _______, _______,   _______,   _______,  _______, _______,  _______, _______, _______, _______
+[_NEO_RAISE] = LAYOUT_planck_grid(
+    KC_TRNS, N_GRAV,  N_UNDS,  N_LBRC,  N_RBRC,  N_CIRC,  N_EXLM,  N_LT,    N_GT,    N_EQL,   N_AMP,   KC_TRNS,
+    _______, N_BSLS,  N_SLSH,  N_LCBR,  N_RCBR,  N_ASTR,  N_QUES,  N_LPRN,  N_RPRN,  N_MINS,  N_COLN,  N_AT,
+    _______, N_HASH,  N_DLR,   N_PIPE,  N_TILD,  N_GRAV,  N_PLUS,  N_PERC,  N_DQT,   N_QUOT,  N_SCLN,  _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
-/* neo on de raise
+/* system DE layout RAISE
+ *
+ * what the system sees
+ *
  * ,-----------------------------------------------------------------------------------.
- * |   X  |   `  |   _  |   [  |   ]  |   ^  |   !  |   <  |   >  |   =  |   &  |  X   |
+ * |      |   +  |   _  |   ?  |  G]  |   ^  |   !  |  G<  |  G>  |   )  |   ^  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | TabUp|   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
+ * |      |  G\  |   &  |  G{  |  G}  |   }  |   _  |   *  |   (  |   /  |   >  | G@   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   #  |   $  |   |  |   ~  |   `  |   +  |   %  |   "  |   '  |   ;  |      |
+ * |      |   \  |   $  |  G|  |  G~  |  G`  |   ]  |   %  |   @  |   |  |   <  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |             |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
- */
-[_NEO_DE_RAISE] = LAYOUT_planck_grid(
-    KC_TRNS, KC_PLUS,   KC_QUES, KC_G_LBRC, KC_G_RBRC, KC_GRV,   KC_EXLM,  KC_G_LT, KC_G_GT, KC_RPRN, KC_CIRC, KC_TRNS,
-    _______, KC_G_BSLS, KC_AMPR, KC_G_LCBR, KC_G_RCBR, KC_RCBR,  KC_UNDS,  KC_ASTR, KC_LPRN, KC_SLSH, KC_GT,   KC_G_AT,
-    _______, KC_BSLS,   KC_DLR,  KC_G_PIPE, KC_G_TILD, KC_G_BTK, KC_RBRC,  KC_PERC, KC_AT,   KC_PIPE, KC_LT,   _______,
-    _______, _______,   _______, _______,   _______,   _______,  _______, _______,  _______, _______, _______, _______
-),
-
-/* neo on us raise
+ *
+ * what the user sees
+ *
  * ,-----------------------------------------------------------------------------------.
- * |   X  |   `  |   _  |   [  |   ]  |   ^  |   !  |   <  |   >  |   =  |   &  |  X   |
+ * |      |   `  |   _  |   [  |   ]  |   ^  |   !  |   <  |   >  |   =  |   &  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | TabUp|   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   #  |   $  |   |  |   ~  |   `  |   +  |   %  |   "  |   '  |   ;  |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |             |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
-[_NEO_US_RAISE] = LAYOUT_planck_grid(
-    KC_TRNS, KC_PLUS,   KC_QUES, KC_G_LBRC, KC_G_RBRC, KC_GRV,   KC_EXLM,  KC_G_LT, KC_G_GT, KC_RPRN, KC_CIRC, KC_TRNS,
-    _______, KC_G_BSLS, KC_AMPR, KC_G_LCBR, KC_G_RCBR, KC_RCBR,  KC_UNDS,  KC_ASTR, KC_LPRN, KC_SLSH, KC_GT,   KC_G_AT,
-    _______, KC_BSLS,   KC_DLR,  KC_G_PIPE, KC_G_TILD, KC_G_BTK, KC_RBRC,  KC_PERC, KC_AT,   KC_PIPE, KC_LT,   _______,
-    _______, _______,   _______, _______,   _______,   _______,  _______, _______,  _______, _______, _______, _______
-),
-
-/* de raise
- * ,-----------------------------------------------------------------------------------.
- * |   X  |   `  |   _  |   [  |   ]  |   ^  |   !  |   <  |   >  |   =  |   &  |  X   |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | TabUp|   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
+ * |      |   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |   #  |   $  |   |  |   ~  |   `  |   +  |   %  |   "  |   '  |   ;  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -508,17 +519,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_DE_RAISE] = LAYOUT_planck_grid(
-    KC_TRNS, KC_GRV,  KC_UNDS, KC_LBRC, KC_RBRC, KC_CIRC, KC_EXLM, KC_LT,   KC_GT,   KC_EQL,  KC_AMPR, KC_TRNS,
-    KC_TRNS, KC_BSLS, KC_SLSH, KC_LCBR, KC_RCBR, KC_ASTR, KC_QUES, KC_LPRN, KC_RPRN, KC_MINS, KC_COLN, KC_AT,
-    _______, KC_HASH, KC_DLR,  KC_PIPE, KC_TILD, KC_GRV,  KC_PLUS, KC_PERC, KC_DQUO, KC_QUOT, KC_SCLN, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    KC_TRNS, KC_PLUS,   KC_QUES, KC_G_LBRC, KC_G_RBRC, KC_GRV,   KC_EXLM,  KC_G_LT, KC_G_GT, KC_RPRN, KC_CIRC, KC_TRNS,
+    _______, KC_G_BSLS, KC_AMPR, KC_G_LCBR, KC_G_RCBR, KC_RCBR,  KC_UNDS,  KC_ASTR, KC_LPRN, KC_SLSH, KC_GT,   KC_G_AT,
+    _______, KC_BSLS,   KC_DLR,  KC_G_PIPE, KC_G_TILD, KC_G_BTK, KC_RBRC,  KC_PERC, KC_AT,   KC_PIPE, KC_LT,   _______,
+    _______, _______,   _______, _______,   _______,   _______,  _______, _______,  _______, _______, _______, _______
 ),
 
-/* us raise
+/* system US layout RAISE
+ *
+ * what the system sees
+ *
  * ,-----------------------------------------------------------------------------------.
- * |   X  |   `  |   _  |   [  |   ]  |   ^  |   !  |   <  |   >  |   =  |   &  |  X   |
+ * |      |   `  |   _  |   [  |   ]  |   ^  |   !  |   <  |   >  |   =  |   &  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | TabUp|   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
+ * |      |   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |   #  |   $  |   |  |   ~  |   `  |   +  |   %  |   "  |   '  |   ;  |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |             |      |      |      |      |
+ * `-----------------------------------------------------------------------------------'
+ *
+ * what the user sees
+ *
+ * ,-----------------------------------------------------------------------------------.
+ * |      |   `  |   _  |   [  |   ]  |   ^  |   !  |   <  |   >  |   =  |   &  |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |   #  |   $  |   |  |   ~  |   `  |   +  |   %  |   "  |   '  |   ;  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -527,10 +553,46 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_US_RAISE] = LAYOUT_planck_grid(
     KC_TRNS, KC_GRV,  KC_UNDS, KC_LBRC, KC_RBRC, KC_CIRC, KC_EXLM, KC_LT,   KC_GT,   KC_EQL,  KC_AMPR, KC_TRNS,
-    KC_TRNS, KC_BSLS, KC_SLSH, KC_LCBR, KC_RCBR, KC_ASTR, KC_QUES, KC_LPRN, KC_RPRN, KC_MINS, KC_COLN, KC_AT,
-    _______, KC_HASH, KC_DLR,  KC_PIPE, KC_TILD, KC_GRV,  KC_PLUS, KC_PERC, KC_DQUO, KC_QUOT, KC_SCLN, _______,
+    _______, KC_BSLS, KC_SLSH, KC_LCBR, KC_RCBR, KC_ASTR, KC_QUES, KC_LPRN, KC_RPRN, KC_MINS, KC_COLN, KC_AT,
+    _______, KC_HASH, KC_DLR,  KC_PIPE, KC_TILD, KC_GRV,  KC_PLUS, KC_PERC, KC_DQT,  KC_QUOT, KC_SCLN, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
+
+///* de raise
+// * ,-----------------------------------------------------------------------------------.
+// * |   X  |   `  |   _  |   [  |   ]  |   ^  |   !  |   <  |   >  |   =  |   &  |  X   |
+// * |------+------+------+------+------+------+------+------+------+------+------+------|
+// * | TabUp|   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
+// * |------+------+------+------+------+------+------+------+------+------+------+------|
+// * |      |   #  |   $  |   |  |   ~  |   `  |   +  |   %  |   "  |   '  |   ;  |      |
+// * |------+------+------+------+------+------+------+------+------+------+------+------|
+// * |      |      |      |      |      |      |             |      |      |      |      |
+// * `-----------------------------------------------------------------------------------'
+// */
+//[_DE_RAISE] = LAYOUT_planck_grid(
+//    KC_TRNS, KC_PLUS,   KC_QUES, KC_G_LBRC, KC_G_RBRC, KC_GRV,   KC_EXLM,  KC_G_LT, KC_G_GT, KC_RPRN, KC_CIRC, KC_TRNS,
+//    _______, KC_G_BSLS, KC_AMPR, KC_G_LCBR, KC_G_RCBR, KC_RCBR,  KC_UNDS,  KC_ASTR, KC_LPRN, KC_SLSH, KC_GT,   KC_G_AT,
+//    _______, KC_BSLS,   KC_DLR,  KC_G_PIPE, KC_G_TILD, KC_G_BTK, KC_RBRC,  KC_PERC, KC_AT,   KC_PIPE, KC_LT,   _______,
+//    _______, _______,   _______, _______,   _______,   _______,  _______, _______,  _______, _______, _______, _______
+//),
+//
+///* us raise
+// * ,-----------------------------------------------------------------------------------.
+// * |   X  |   `  |   _  |   [  |   ]  |   ^  |   !  |   <  |   >  |   =  |   &  |  X   |
+// * |------+------+------+------+------+------+------+------+------+------+------+------|
+// * | TabUp|   \  |   /  |   {  |   }  |   *  |   ?  |   (  |   )  |   -  |   :  |  @   |
+// * |------+------+------+------+------+------+------+------+------+------+------+------|
+// * |      |   #  |   $  |   |  |   ~  |   `  |   +  |   %  |   "  |   '  |   ;  |      |
+// * |------+------+------+------+------+------+------+------+------+------+------+------|
+// * |      |      |      |      |      |      |             |      |      |      |      |
+// * `-----------------------------------------------------------------------------------'
+// */
+//[_US_RAISE] = LAYOUT_planck_grid(
+//    KC_TRNS, KC_GRV,  KC_UNDS, KC_LBRC, KC_RBRC, KC_CIRC, KC_EXLM, KC_LT,   KC_GT,   KC_EQL,  KC_AMPR, KC_TRNS,
+//    _______, KC_BSLS, KC_SLSH, KC_LCBR, KC_RCBR, KC_ASTR, KC_QUES, KC_LPRN, KC_RPRN, KC_MINS, KC_COLN, KC_AT,
+//    _______, KC_HASH, KC_DLR,  KC_PIPE, KC_TILD, KC_GRV,  KC_PLUS, KC_PERC, KC_DQT,  KC_QUOT, KC_SCLN, _______,
+//    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+//),
 
 ///* neo on neo adjust (neo neo lower + neo neo raise)
 // * ,-----------------------------------------------------------------------------------.
@@ -661,9 +723,9 @@ uint32_t layer_state_set_user(uint32_t state) {
 //  if (layer_state_is(_NEOLOWER)) {print("NEOLOWER\n");}
 //  if (layer_state_is(_NEORAISE)) {print("NEORAISE\n");}
 //  if (layer_state_is(_NEOADJUST)) {print("NEOADJUST\n");}
-//  state = update_tri_layer_state(state, _LOWER, _NEO_NEO_RAISE, _NEO_NEO_ADJUST);
-//  state = update_tri_layer_state(state, _LOWER, _NEO_DE_RAISE, _NEO_DE_ADJUST);
-//  state = update_tri_layer_state(state, _LOWER, _NEO_US_RAISE, _NEO_US_ADJUST);
+//  state = update_tri_layer_state(state, _LOWER, _NEO_RAISE, _NEO_NEO_ADJUST);
+//  state = update_tri_layer_state(state, _LOWER, _DE_RAISE, _NEO_DE_ADJUST);
+//  state = update_tri_layer_state(state, _LOWER, _US_RAISE, _NEO_US_ADJUST);
 //  state = update_tri_layer_state(state, _LOWER, _DE_RAISE, _DE_ADJUST);
 //  state = update_tri_layer_state(state, _LOWER, _US_RAISE, _US_ADJUST);
 //  print("first\n");
@@ -683,15 +745,23 @@ uint32_t layer_state_set_user(uint32_t state) {
 //  print("\n");
 //  return state;
   if (
-      ( layer_state_cmp(state, _LOWER) && layer_state_cmp(state, _NEO_NEO_RAISE ) ) ||
-      ( layer_state_cmp(state, _LOWER) && layer_state_cmp(state, _NEO_DE_RAISE ) ) ||
-      ( layer_state_cmp(state, _LOWER) && layer_state_cmp(state, _NEO_US_RAISE ) ) ||
+      ( layer_state_cmp(state, _LOWER) && layer_state_cmp(state, _NEO_RAISE ) ) ||
       ( layer_state_cmp(state, _LOWER) && layer_state_cmp(state, _DE_RAISE ) ) ||
+//      ( layer_state_cmp(state, _LOWER) && layer_state_cmp(state, _US_RAISE ) ) ||
+//      ( layer_state_cmp(state, _LOWER) && layer_state_cmp(state, _DE_RAISE ) ) ||
       ( layer_state_cmp(state, _LOWER) && layer_state_cmp(state, _US_RAISE ) ) ) {
     return state | (1UL<<_ADJUST);
   } else {
     return state & ~(1UL<<_ADJUST);
   }
+}
+
+void neo_layer_3(uint16_t keycode, keyrecord_t *record) {
+      if (record->event.pressed) {
+        register_code(KC_CAPS);
+        tap_code(keycode);
+        unregister_code(KC_CAPS);
+      }
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -758,14 +828,109 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    case BACKTICK:
-      if (record->event.pressed) {
-//        print("backtick\n");
-        SENDSTRING("`");
-      } else {
-        // when keycode QMKBEST is released
-      }
+// NEO keys      
+    case N_GRAV:
+      neo_layer_3(KC_B, record);
       break;
+    case N_UNDS:
+      neo_layer_3(KC_W, record);
+      break;
+    case N_LBRC:
+      neo_layer_3(KC_E, record);
+      break;
+    case N_RBRC:
+      neo_layer_3(KC_R, record);
+      break;
+    case N_CIRC:
+      neo_layer_3(KC_T, record);
+      break;
+    case N_EXLM:
+      neo_layer_3(KC_Y, record);
+      break;
+    case N_LT:
+      neo_layer_3(KC_U, record);
+      break;
+    case N_GT:
+      neo_layer_3(KC_I, record);
+      break;
+    case N_EQL:
+      neo_layer_3(KC_O, record);
+      break;
+    case N_AMP:
+      neo_layer_3(KC_P, record);
+      break;
+    case N_BSLS:
+      neo_layer_3(KC_A, record);
+      break;
+    case N_SLSH:
+      neo_layer_3(KC_S, record);
+      break;
+    case N_LCBR:
+      neo_layer_3(KC_D, record);
+      break;
+    case N_RCBR:
+      neo_layer_3(KC_F, record);
+      break;
+    case N_ASTR:
+      neo_layer_3(KC_G, record);
+      break;
+    case N_QUES:
+      neo_layer_3(KC_H, record);
+      break;
+    case N_LPRN:
+      neo_layer_3(KC_J, record);
+      break;
+    case N_RPRN:
+      neo_layer_3(KC_K, record);
+      break;
+    case N_MINS:
+      neo_layer_3(KC_L, record);
+      break;
+    case N_COLN:
+      neo_layer_3(KC_SCLN, record);
+      break;
+    case N_AT:
+      neo_layer_3(KC_QUOT, record);
+      break;
+    case N_HASH:
+      neo_layer_3(KC_Z, record);
+      break;
+    case N_DLR:
+      neo_layer_3(KC_X, record);
+      break;
+    case N_PIPE:
+      neo_layer_3(KC_C, record);
+      break;
+    case N_TILD:
+      neo_layer_3(KC_V, record);
+      break;
+    case N_GRV:
+      neo_layer_3(KC_B, record);
+      break;
+    case N_PLUS:
+      neo_layer_3(KC_N, record);
+      break;
+    case N_PERC:
+      neo_layer_3(KC_M, record);
+      break;
+    case N_DQT:
+      neo_layer_3(KC_COMM, record);
+      break;
+    case N_QUOT:
+      neo_layer_3(KC_DOT, record);
+      break;
+    case N_SCLN:
+      neo_layer_3(KC_SLSH, record);
+      break;
+//      if (record->event.pressed) {
+////        print("backtick\n");
+////        register_code(KC_CAPS);
+////        tap_code(KC_B);
+////        unregister_code(KC_CAPS);
+//      } else {
+//        // when keycode QMKBEST is released
+//      }
+//      break;
   }
   return true;
 }
