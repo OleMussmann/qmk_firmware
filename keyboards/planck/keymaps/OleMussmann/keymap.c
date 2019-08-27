@@ -156,7 +156,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_NEO_NEO] = LAYOUT_planck_grid(
     KC_GRV,     KC_Q,     KC_W,    KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_LBRC,
-    KC_TBUPN,  KC_A,     KC_S,    KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPN,
+    KC_TBUPN,   KC_A,     KC_S,    KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPN,
     KC_LSFT,    KC_ZDOWN, KC_X,    KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
     KC_CTLESC,  KC_LGUI,  KC_LALT, KC_NCOPY, KC_NCPUS, KC_NPSTE, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
@@ -189,7 +189,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_NEO_GAME] = LAYOUT_planck_grid(
     KC_TAB,    KC_Q,     KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_LBRC,
-    NR,       KC_A,     KC_S,    KC_D,   KC_F,   KC_G,   KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPN,
+    NR,        KC_A,     KC_S,    KC_D,   KC_F,   KC_G,   KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPN,
     KC_LSFT,   KC_ZDOWN, KC_X,    KC_C,   KC_V,   KC_B,   KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
     KC_CTLESC, KC_LGUI,  KC_LALT, KC_SPC, KC_SPC, KC_SPC, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
@@ -222,7 +222,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_NEO_DE] = LAYOUT_planck_grid(
     KC_GRV,     KC_X,     KC_V,    KC_L,    KC_C,     KC_W,     KC_K,     KC_H,     KC_G,    KC_F,    KC_Q,   KC_MINS,
-    KC_TBUPD,  KC_U,     KC_I,    KC_A,    KC_E,     KC_O,     KC_S,     KC_N,     KC_R,    KC_T,    KC_D,   KC_ZUPD,
+    KC_TBUPD,   KC_U,     KC_I,    KC_A,    KC_E,     KC_O,     KC_S,     KC_N,     KC_R,    KC_T,    KC_D,   KC_ZUPD,
     KC_LSFT,    KC_LBDWN, KC_SCLN, KC_QUOT, KC_P,     KC_Y,     KC_B,     KC_M,     KC_COMM, KC_DOT,  KC_J,   KC_RSFT,
     KC_CTLESC,  KC_LGUI,  KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT
 ),
@@ -255,8 +255,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_NEO_US] = LAYOUT_planck_grid(
     KC_GRV,     KC_X,    KC_V,    KC_L,    KC_C,     KC_W,     KC_K,     KC_H,     KC_G,    KC_F,    KC_Q,   KC_NO,
-    KC_TBUPU,  KC_U,    KC_I,    KC_A,    KC_E,     KC_O,     KC_S,     KC_N,     KC_R,    KC_T,    KC_D,   KC_YUPU,
-    KC_LSFT,    LOWER,      KC_NO,   KC_NO,   KC_P,     KC_Z,     KC_B,     KC_M,     KC_COMM, KC_DOT,  KC_J,   KC_RSFT,
+    KC_TBUPU,   KC_U,    KC_I,    KC_A,    KC_E,     KC_O,     KC_S,     KC_N,     KC_R,    KC_T,    KC_D,   KC_YUPU,
+    KC_LSFT,    LOWER,   KC_NO,   KC_NO,   KC_P,     KC_Z,     KC_B,     KC_M,     KC_COMM, KC_DOT,  KC_J,   KC_RSFT,
     KC_CTLESC,  KC_LGUI, KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT
 ),
 
@@ -290,7 +290,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,   KC_Q,     KC_W,    KC_E,    KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_BSPC,
     KC_TBUPD, KC_A,     KC_S,    KC_D,    KC_F,     KC_G,     KC_H,     KC_J,     KC_K,    KC_L,    KC_RBRC, KC_BSUPD,
     KC_LSFT,  KC_ZDOWN, KC_X,    KC_C,    KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-    KC_LCTL,  KC_LGUI,  KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SDOWN,  KC_SDOWN,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_LCTL,  KC_LGUI,  KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* DE keyboard on system DE layout - GAME mode
@@ -323,7 +323,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,    KC_Q,     KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_BSPC,
     DR,        KC_A,     KC_S,    KC_D,   KC_F,   KC_G,   KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_BSUPD,
     KC_LSFT,   KC_ZDOWN, KC_X,    KC_C,   KC_V,   KC_B,   KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-    KC_CTLESC, KC_LGUI,  KC_LALT, KC_SPC, KC_SPC, KC_SPC, KC_SDOWN,  KC_SDOWN,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_CTLESC, KC_LGUI,  KC_LALT, KC_SPC, KC_SPC, KC_SPC, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* US keyboard on system US layout
@@ -353,9 +353,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_US] = LAYOUT_planck_grid(
-    KC_ESC,   KC_Q,     KC_W,    KC_E,    KC_R,     KC_T,     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-    KC_TBUPU, KC_A,     KC_S,    KC_D,    KC_F,     KC_G,     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUUPU,
-    KC_LSFT,  KC_ZDOWN, KC_X,    KC_C,    KC_V,     KC_B,     KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+    KC_ESC,   KC_Q,     KC_W,    KC_E,    KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_BSPC,
+    KC_TBUPU, KC_A,     KC_S,    KC_D,    KC_F,     KC_G,     KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPU,
+    KC_LSFT,  KC_ZDOWN, KC_X,    KC_C,    KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
     KC_LCTL,  KC_LGUI,  KC_LALT, NEO_NEO, KC_CPUSR, KC_PASTE, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
@@ -386,9 +386,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_US_GAME] = LAYOUT_planck_grid(
-    KC_TAB,    KC_Q,     KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-    UR,        KC_A,     KC_S,    KC_D,   KC_F,   KC_G,   KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUUPU,
-    KC_LSFT,   KC_ZDOWN, KC_X,    KC_C,   KC_V,   KC_B,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+    KC_TAB,    KC_Q,     KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_BSPC,
+    UR,        KC_A,     KC_S,    KC_D,   KC_F,   KC_G,   KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPU,
+    KC_LSFT,   KC_ZDOWN, KC_X,    KC_C,   KC_V,   KC_B,   KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
     KC_CTLESC, KC_LGUI,  KC_LALT, KC_SPC, KC_SPC, KC_SPC, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
