@@ -43,8 +43,8 @@
 )
 
 
-//#define PERMISSIVE_HOLD
-//#define TAPPING_TERM 200
+#define PERMISSIVE_HOLD
+//#define TAPPING_TERM 150
 
 //#define NO_AUTO_SHIFT_SPECIAL
 //#define NO_AUTO_SHIFT_NUMERIC

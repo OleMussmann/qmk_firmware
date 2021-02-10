@@ -139,7 +139,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| ZDwn |  X   |  C   |  V   |  B   |  N   |  M   | Comm | Dot  | SLSH | RShft|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   | Left | Down |  Up  | Right|
+ * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  *
  * what the user sees
@@ -151,14 +151,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| ÜDwn |  Ö   |  Ä   |  P   |  Z   |  B   |  M   |  ,   |  .   |  J   | RShft|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   | Left | Down |  Up  | Right|
+ * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  */
 [_NEO_NEO] = LAYOUT_planck_grid(
     KC_GRV,     KC_Q,     KC_W,    KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_LBRC,
     KC_TBUPN,   KC_A,     KC_S,    KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPN,
     KC_LSFT,    KC_ZDOWN, KC_X,    KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-    KC_CTLESC,  KC_LGUI,  KC_LALT, KC_NCOPY, KC_NCPUS, KC_NPSTE, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_CTLESC,  KC_LGUI,  KC_LALT, KC_NCOPY, KC_NCPUS, KC_NPSTE, KC_SDOWN, KC_SDOWN, _______, KC_RALT, KC_RGUI, KC_RCTL
 ),
 
 /* NEO keyboard on system NEO layout - GAME mode
@@ -172,7 +172,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| ZUp  |  X   |  C   |  V   |  B   |  N   |  M   | Comm | Dot  | SLSH | RShft|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |CtlEsc| LWin | LAlt | Space| Space| Space|  SpaceDwn   | Left | Down |  Up  | Right|
+ * |CtlEsc| LWin | LAlt | Space| Space| Space|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  *
  * what the user sees
@@ -184,14 +184,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| ÜDwn |  Ö   |  Ä   |  P   |  Z   |  B   |  M   |  ,   |  .   |  J   | RShft|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |CtlEsc| LWin | LAlt | Space| Space| Space|  SpaceDwn   | Left | Down |  Up  | Right|
+ * | LCtrl| Esc  | LAlt | Space| Space| Space|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  */
 [_NEO_GAME] = LAYOUT_planck_grid(
-    KC_TAB,    KC_Q,     KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_LBRC,
-    NR,        KC_A,     KC_S,    KC_D,   KC_F,   KC_G,   KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPN,
-    KC_LSFT,   KC_ZDOWN, KC_X,    KC_C,   KC_V,   KC_B,   KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-    KC_CTLESC, KC_LGUI,  KC_LALT, KC_SPC, KC_SPC, KC_SPC, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_TAB,  KC_Q,     KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_LBRC,
+    NR,      KC_A,     KC_S,    KC_D,   KC_F,   KC_G,   KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPN,
+    KC_LSFT, KC_ZDOWN, KC_X,    KC_C,   KC_V,   KC_B,   KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+    KC_LCTL, KC_ESC,   KC_LALT, KC_SPC, KC_SPC, KC_SPC, KC_SDOWN, KC_SDOWN, _______, KC_RALT, KC_RGUI, KC_RCTL
 ),
 
 /* NEO keyboard on system DE layout
@@ -205,7 +205,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft|LbcDwn| Scln | Quot |  P   |  Y   |  B   |  M   | Comm | Dot  |  J   | RShft|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   | Left | Down |  Up  | Right|
+ * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  *
  * what the user sees
@@ -217,14 +217,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| ÜDwn |  Ö   |  Ä   |  P   |  Y   |  B   |  M   |  ,   |  .   |  J   | RShft|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   | Left | Down |  Up  | Right|
+ * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  */
 [_NEO_DE] = LAYOUT_planck_grid(
-    KC_GRV,     KC_X,     KC_V,    KC_L,    KC_C,     KC_W,     KC_K,     KC_H,     KC_G,    KC_F,    KC_Q,   KC_MINS,
-    KC_TBUPD,   KC_U,     KC_I,    KC_A,    KC_E,     KC_O,     KC_S,     KC_N,     KC_R,    KC_T,    KC_D,   KC_ZUPD,
-    KC_LSFT,    KC_LBDWN, KC_SCLN, KC_QUOT, KC_P,     KC_Y,     KC_B,     KC_M,     KC_COMM, KC_DOT,  KC_J,   KC_RSFT,
-    KC_CTLESC,  KC_LGUI,  KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT
+    KC_GRV,     KC_X,     KC_V,    KC_L,    KC_C,     KC_W,     KC_K,     KC_H,     KC_G,    KC_F,    KC_Q,    KC_MINS,
+    KC_TBUPD,   KC_U,     KC_I,    KC_A,    KC_E,     KC_O,     KC_S,     KC_N,     KC_R,    KC_T,    KC_D,    KC_ZUPD,
+    KC_LSFT,    KC_LBDWN, KC_SCLN, KC_QUOT, KC_P,     KC_Y,     KC_B,     KC_M,     KC_COMM, KC_DOT,  KC_J,    KC_RSFT,
+    KC_CTLESC,  KC_LGUI,  KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SDOWN, KC_SDOWN, _______, KC_RALT, KC_RGUI, KC_RCTL
 ),
 
 /* NEO keyboard on system US layout
@@ -238,7 +238,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| Raise|      |      |  P   |  Y   |  B   |  M   | Comm | Dot  |  J   | RShft|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   | Left | Down |  Up  | Right|
+ * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  *
  * what the user sees
@@ -250,14 +250,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| Raise|      |      |  P   |  Y   |  B   |  M   | Comm | Dot  |  J   | RShft|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   | Left | Down |  Up  | Right|
+ * |CtlEsc| LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  */
 [_NEO_US] = LAYOUT_planck_grid(
-    KC_GRV,     KC_X,    KC_V,    KC_L,    KC_C,     KC_W,     KC_K,     KC_H,     KC_G,    KC_F,    KC_Q,   KC_NO,
-    KC_TBUPU,   KC_U,    KC_I,    KC_A,    KC_E,     KC_O,     KC_S,     KC_N,     KC_R,    KC_T,    KC_D,   KC_YUPU,
-    KC_LSFT,    LOWER,   KC_NO,   KC_NO,   KC_P,     KC_Z,     KC_B,     KC_M,     KC_COMM, KC_DOT,  KC_J,   KC_RSFT,
-    KC_CTLESC,  KC_LGUI, KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT
+    KC_GRV,     KC_X,    KC_V,    KC_L,    KC_C,     KC_W,     KC_K,     KC_H,     KC_G,    KC_F,    KC_Q,    KC_NO,
+    KC_TBUPU,   KC_U,    KC_I,    KC_A,    KC_E,     KC_O,     KC_S,     KC_N,     KC_R,    KC_T,    KC_D,    KC_YUPU,
+    KC_LSFT,    LOWER,   KC_NO,   KC_NO,   KC_P,     KC_Z,     KC_B,     KC_M,     KC_COMM, KC_DOT,  KC_J,    KC_RSFT,
+    KC_CTLESC,  KC_LGUI, KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SDOWN, KC_SDOWN, _______, KC_RALT, KC_RGUI, KC_RCTL
 ),
 
 /* DE keyboard on system DE layout
@@ -271,7 +271,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| ZDown|   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | Enter|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   | Left | Down |  Up  | Right|
+ * | Ctrl | LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  *
  * what the user sees
@@ -283,14 +283,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| YDown|   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   -  | Enter|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   | Left | Down |  Up  | Right|
+ * | Ctrl | LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  */
 [_DE] = LAYOUT_planck_grid(
     KC_ESC,   KC_Q,     KC_W,    KC_E,    KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_BSPC,
     KC_TBUPD, KC_A,     KC_S,    KC_D,    KC_F,     KC_G,     KC_H,     KC_J,     KC_K,    KC_L,    KC_RBRC, KC_BSUPD,
     KC_LSFT,  KC_ZDOWN, KC_X,    KC_C,    KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-    KC_LCTL,  KC_LGUI,  KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_LCTL,  KC_LGUI,  KC_LALT, KC_COPY, KC_CPUSR, KC_PASTE, KC_SDOWN, KC_SDOWN, _______, KC_RALT, KC_RGUI, KC_RCTL
 ),
 
 /* DE keyboard on system DE layout - GAME mode
@@ -304,7 +304,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| ZDown|   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | Enter|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | LWin | LAlt | Space| Space| Space|  SpaceDwn   | Left | Down |  Up  | Right|
+ * | Ctrl | LWin | LAlt | Space| Space| Space|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  *
  * what the user sees
@@ -316,14 +316,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| YDown|   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   -  | Enter|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | LWin | LAlt | Space| Space| Space|  SpaceDwn   | Left | Down |  Up  | Right|
+ * | Ctrl | LWin | LAlt | Space| Space| Space|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  */
 [_DE_GAME] = LAYOUT_planck_grid(
     KC_TAB,    KC_Q,     KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_BSPC,
     DR,        KC_A,     KC_S,    KC_D,   KC_F,   KC_G,   KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_BSUPD,
     KC_LSFT,   KC_ZDOWN, KC_X,    KC_C,   KC_V,   KC_B,   KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-    KC_CTLESC, KC_LGUI,  KC_LALT, KC_SPC, KC_SPC, KC_SPC, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_CTLESC, KC_LGUI,  KC_LALT, KC_SPC, KC_SPC, KC_SPC, KC_SDOWN, KC_SDOWN, _______, KC_RALT, KC_RGUI, KC_RCTL
 ),
 
 /* US keyboard on system US layout
@@ -337,7 +337,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| ZDown|   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | Enter|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   | Left | Down |  Up  | Right|
+ * | Ctrl | LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  *
  * what the user sees
@@ -349,14 +349,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| ZDown|   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | Enter|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   | Left | Down |  Up  | Right|
+ * | Ctrl | LWin | LAlt | Copy |Cpyusr| Paste|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  */
 [_US] = LAYOUT_planck_grid(
     KC_ESC,   KC_Q,     KC_W,    KC_E,    KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_BSPC,
     KC_TBUPU, KC_A,     KC_S,    KC_D,    KC_F,     KC_G,     KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPU,
     KC_LSFT,  KC_ZDOWN, KC_X,    KC_C,    KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-    KC_LCTL,  KC_LGUI,  KC_LALT, NEO_NEO, KC_CPUSR, KC_PASTE, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_LCTL,  KC_LGUI,  KC_LALT, NEO_NEO, KC_CPUSR, KC_PASTE, KC_SDOWN, KC_SDOWN, _______, KC_RALT, KC_RGUI, KC_RCTL
 ),
 
 /* US keyboard on system US layout - GAME mode
@@ -370,7 +370,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| ZDown|   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | Enter|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | LWin | LAlt | Space| Space| Space|  SpaceDwn   | Left | Down |  Up  | Right|
+ * | Ctrl | LWin | LAlt | Space| Space| Space|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  *
  * what the user sees
@@ -382,14 +382,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | LShft| ZDown|   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | Enter|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | LWin | LAlt | Space| Space| Space|  SpaceDwn   | Left | Down |  Up  | Right|
+ * | Ctrl | LWin | LAlt | Space| Space| Space|  SpaceDwn   |      | RAlt | RWin | RCtrl|
  * `-----------------------------------------------------------------------------------'
  */
 [_US_GAME] = LAYOUT_planck_grid(
     KC_TAB,    KC_Q,     KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    KC_BSPC,
     UR,        KC_A,     KC_S,    KC_D,   KC_F,   KC_G,   KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUUPU,
     KC_LSFT,   KC_ZDOWN, KC_X,    KC_C,   KC_V,   KC_B,   KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-    KC_CTLESC, KC_LGUI,  KC_LALT, KC_SPC, KC_SPC, KC_SPC, KC_SDOWN, KC_SDOWN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_CTLESC, KC_LGUI,  KC_LALT, KC_SPC, KC_SPC, KC_SPC, KC_SDOWN, KC_SDOWN, _______, KC_RALT, KC_RGUI, KC_RCTL
 ),
 
 /* LOWER
@@ -397,11 +397,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * what the system sees
  *
  * ,-----------------------------------------------------------------------------------.
- * | Esc  | PgUp | Bspc | Up   | Del  | PgDn |  N°  |  7   |  8   |  9   | Pscr | Bspc |
+ * |      | PgUp | Bspc | Up   | Del  | PgDn |  N°  |  7   |  8   |  9   | Pscr |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Tab  | Home | Left | Down | Right| End  |  N€  |  4   |  5   |  6   | Slck |      |
+ * |      | Home | Left | Down | Right| End  |  N€  |  4   |  5   |  6   | Slck |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      | Esc  | Tab  | Ins  | Ent  |      |      |  1   |  2   |  3   | Pause| Ent  |
+ * |      | Esc  | Tab  | Ins  | Ent  |      |      |  1   |  2   |  3   | Pause|      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      0      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
@@ -409,19 +409,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * what the user sees (on NEO layout; `°` and `€` will differ depending on the host layout)
  *
  * ,-----------------------------------------------------------------------------------.
- * | Esc  | PgUp | Bspc | Up   | Del  | PgDn |  °   |  7   |  8   |  9   | Pscr | Bspc |
+ * |      | PgUp | Bspc | Up   | Del  | PgDn |  °   |  7   |  8   |  9   | Pscr |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Tab  | Home | Left | Down | Right| End  |  €   |  4   |  5   |  6   | Slck |      |
+ * |      | Home | Left | Down | Right| End  |  €   |  4   |  5   |  6   | Slck |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      | Esc  | Tab  | Ins  | Ent  |      |      |  1   |  2   |  3   | Pause| Ent  |
+ * |      | Esc  | Tab  | Ins  | Ent  |      |      |  1   |  2   |  3   | Pause|      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      0      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-    KC_ESC,  KC_PGUP, KC_BSPC, KC_UP,   KC_DEL,  KC_PGDN, KC_N_DEG, KC_7, KC_8,    KC_9,    KC_PSCR, KC_BSPC,
-    KC_TAB,  KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  KC_N_EUR, KC_4, KC_5,    KC_6,    KC_SLCK, _______,
-    _______, KC_ESC,  KC_TAB,  KC_INS,  KC_ENT,  KC_TRNS, KC_TRNS,  KC_1, KC_2,    KC_3,    KC_PAUS, KC_ENT,
+    _______, KC_PGUP, KC_BSPC, KC_UP,   KC_DEL,  KC_PGDN, KC_N_DEG, KC_7, KC_8,    KC_9,    KC_PSCR, _______,
+    _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  KC_N_EUR, KC_4, KC_5,    KC_6,    KC_SLCK, _______,
+    _______, KC_ESC,  KC_TAB,  KC_INS,  KC_ENT,  KC_TRNS, KC_TRNS,  KC_1, KC_2,    KC_3,    KC_PAUS, _______,
     _______, _______, _______, _______, _______, _______, KC_0,     KC_0, _______, _______, _______, _______
 ),
 
